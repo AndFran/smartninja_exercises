@@ -1,0 +1,30 @@
+
+.banner_height{
+    height: 300px;
+}
+
+.title_margin{
+    margin-bottom: 30px;
+}
+
+.bold_text{
+    font-weight: bold;
+}
+
+.title_images_40_right{
+    float: right;
+    height: 40px;
+    width: 40px;
+}
+
+.standard_control_padding{
+    margin-top: 30px;
+}
+
+.center_text{
+    margin: 0 auto;
+}
+
+.bottom_scroll_padding{
+    padding-top: 100px;
+}
