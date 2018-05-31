@@ -12,15 +12,15 @@ def main():
             exit(0)
         try:
             guess = int(guess)
+            if guess == secret:
+                print "YOU WIN"
+                exit(0)
+            elif guess > secret:
+                print "You guess is too high"
+            else:
+                print "You guess is too low"
         except ValueError:
             print "Enter a valid number or q to quit"
-        if guess == secret:
-            print "YOU WIN"
-            exit(0)
-        elif guess > secret:
-            print "You guess is too high"
-        else:
-            print "You guess is too low"
 
 
 if __name__ == '__main__':
