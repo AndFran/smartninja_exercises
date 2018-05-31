@@ -5,7 +5,6 @@ def main():
     secret = randint(1, 100)
 
     while True:
-        print(secret)
         guess = raw_input("Enter a number between 1 and 99 (q to quit):")
         guess = guess.lower()
         if guess == 'q':
