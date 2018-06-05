@@ -12,7 +12,8 @@ while True:
             raise ValueError
     except ValueError:
         print "Please enter a valid number between 1 and 100"
-
+        continue
+        
     for i in range(1, choice+1):
         if i % 3 == 0 and i % 5 == 0:
             print 'fizzbuzz'
