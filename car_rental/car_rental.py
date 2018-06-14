@@ -1,5 +1,6 @@
 from __future__ import print_function
 import csv
+import os.path
 
 
 class Car(object):
@@ -15,6 +16,9 @@ class Car(object):
 
 def read_all_cars():
     cars = []
+    if not os.path.isfile('database.txt'):
+        with open('database.txt', 'w+'):
+            pass
     with open('database.txt', 'r') as f:
         rows = csv.reader(f)
         for row in rows:
@@ -76,7 +80,10 @@ def edit_car():
         for index, c in enumerate(all_cars, start=1):
             print(index, " - ", str(c))
         try:
-            choice = int(raw_input("Enter car number"))
+            choice = raw_input("Enter car number (q to quit):")
+            if choice.lower() == 'q':
+                break
+            choice = int(choice)
             if choice < 1 or choice > index:
                 print("Please enter a number between 1 and", index)
                 continue
