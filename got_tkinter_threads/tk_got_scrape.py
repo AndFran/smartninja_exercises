@@ -12,7 +12,7 @@ class GOT_Download_GUI:
     def __init__(self, master):
         self.master = master
         master.title("GOT downloader")
-        master.configure(background='aquamarine')
+        master.configure(background='SteelBlue4')
 
         menu_bar = tk.Menu(master)
         file_menu = tk.Menu(menu_bar, tearoff=0)
