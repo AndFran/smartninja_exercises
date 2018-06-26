@@ -64,25 +64,23 @@ class GOT_Download_GUI:
         self.canvas.delete("all")
 
         def callback():
-            cancelled = False
             seasons = get_seasons()
             for season in seasons[:-1]:
                 get_episode_data(season)
                 if self.stop_thread:
-                    cancelled = True
                     break
 
             text = ""
             running_total = 0
             for s in seasons:
                 if self.stop_thread:
-                    cancelled = True
                     break
                 text += s.name + " " + str(s.season_total) + "\n"
                 running_total += s.season_total
 
-            if cancelled:
+            if self.stop_thread:
                 self.results_text.insert(tk.END, "Download Aborted")
+                self.stop_thread = False
             else:
                 text += "Overall total: " + str(running_total)
                 self.draw_lines(seasons)
