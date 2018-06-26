@@ -42,6 +42,9 @@ class GOT_Download_GUI:
             self.canvas.create_text(20 + (size * index), 10, fill="darkblue", font="Times 10 italic bold",
                                     text="S{}".format(index))
 
+        self.canvas.create_text(100, 50, fill="darkblue", font="Times 10 italic bold",
+                                text="Total views {}".format(sum(s.season_total for s in seasons)))
+
     def cancel_download(self):
         self.stop_thread = True
 
